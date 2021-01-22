@@ -15,10 +15,7 @@ namespace TVAssinatura.Dados.Repositorios
         public List<Contrato> ObterContratosPorCliente(Cliente cliente)
         {
             var contratos = Context.Set<Contrato>().Where(c => c.Cliente == cliente);
-            if (contratos.Any())
-                return contratos.ToList();
-            
-            return null;
+            return contratos.Any() ? contratos.ToList() : null;
         }
     }
 }

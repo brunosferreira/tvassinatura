@@ -14,17 +14,13 @@ namespace TVAssinatura.Dados.Repositorios
         public Canal ObterCanalPorNome(string nome)
         {
             var canal = Context.Set<Canal>().Where(c => c.Nome == nome);
-            if (canal.Any())
-                return canal.First();
-            return null;
+            return canal.Any() ? canal.First() : null;
         }
 
         public List<Canal> ObterCanaisPorCategoria(Categoria categoria)
         {
             var canais = Context.Set<Canal>().Where(c => c.Categoria == categoria);
-            if (canais.Any())
-                return canais.ToList();
-            return null;
+            return canais.Any() ? canais.ToList() : null;
         }
     }
 }
