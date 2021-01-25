@@ -25,4 +25,8 @@
     <ProjectReference Include="..\TVAssinatura.Dominio\TVAssinatura.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Aplicacao\" />
+  </ItemGroup>
+
 </Project>
