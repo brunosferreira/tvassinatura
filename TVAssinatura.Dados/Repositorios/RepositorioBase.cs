@@ -19,13 +19,13 @@ namespace TVAssinatura.Dados.Repositorios
             Context.Set<TEntidade>().Add(entity);
         }
 
-        public virtual TEntidade ObterPorId(int id)
+        public TEntidade ObterPorId(int id)
         {
             var query = Context.Set<TEntidade>().Where(entidade => entidade.Id == id);
             return query.Any() ? query.First() : null;
         }
 
-        public virtual List<TEntidade> Consultar()
+        public List<TEntidade> Consultar()
         {
             var entidades = Context.Set<TEntidade>().ToList();
             return entidades.Any() ? entidades : new List<TEntidade>();
