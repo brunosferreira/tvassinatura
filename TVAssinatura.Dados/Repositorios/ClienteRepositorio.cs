@@ -10,7 +10,7 @@ namespace TVAssinatura.Dados.Repositorios
         {
         }
 
-        public Cliente ObterPeloCpf(string cpf)
+        public Cliente ObterPorCpf(string cpf)
         {
             var cliente = Context.Set<Cliente>().Where(c => c.Cpf == cpf);
             return cliente.Any() ? cliente.First() : null;

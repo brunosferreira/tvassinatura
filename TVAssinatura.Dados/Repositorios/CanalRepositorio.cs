@@ -11,13 +11,13 @@ namespace TVAssinatura.Dados.Repositorios
         {
         }
 
-        public Canal ObterCanalPorNome(string nome)
+        public Canal ObterPorNome(string nome)
         {
             var canal = Context.Set<Canal>().Where(c => c.Nome == nome);
             return canal.Any() ? canal.First() : null;
         }
 
-        public List<Canal> ObterCanaisPorCategoria(Categoria categoria)
+        public List<Canal> ObterPorCategoria(Categoria categoria)
         {
             var canais = Context.Set<Canal>().Where(c => c.Categoria == categoria);
             return canais.Any() ? canais.ToList() : null;

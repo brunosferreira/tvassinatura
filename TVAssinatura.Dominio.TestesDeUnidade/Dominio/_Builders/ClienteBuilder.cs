@@ -14,7 +14,6 @@ namespace TVAssinatura.Dominio.TestesDeUnidade._Builders
         private string Cpf = cpfInvalido;
         private DateTime DataDeNascimento = faker.Person.DateOfBirth;
         private string TelefoneDeContato = faker.Phone.PhoneNumber("#########");
-        private Endereco Endereco = EnderecoBuilder.Novo().Build();
 
         public static ClienteBuilder Novo()
         {
@@ -23,7 +22,7 @@ namespace TVAssinatura.Dominio.TestesDeUnidade._Builders
 
         public Cliente Build()
         {
-            return new Cliente(Cpf, Nome, DataDeNascimento, Endereco, TelefoneDeContato);
+            return new Cliente(Cpf, Nome, DataDeNascimento, TelefoneDeContato);
         }
 
         public ClienteBuilder ComNome(string nome)
@@ -35,6 +34,12 @@ namespace TVAssinatura.Dominio.TestesDeUnidade._Builders
         public ClienteBuilder ComCpf(string cpf)
         {
             Cpf = cpf;
+            return this;
+        }
+
+        public ClienteBuilder ComTelefoneDeContato(string telefone)
+        {
+            TelefoneDeContato = telefone;
             return this;
         }
     }

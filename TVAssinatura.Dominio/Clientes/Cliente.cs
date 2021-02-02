@@ -12,13 +12,13 @@ namespace TVAssinatura.Dominio.Clientes
         public Endereco Endereco { get; private set; }
         public string TelefoneDeContato { get; private set; }
 
-        public Cliente(string cpf, string nome, DateTime dataDeNascimento, Endereco endereco, string telefoneDeContato)
+        public Cliente(string cpf, string nome, DateTime dataDeNascimento, string telefoneDeContato)
         {
             Validar(cpf, nome);
+            ValidarTelefoneDeContato(telefoneDeContato);
             Cpf = cpf;
             Nome = nome;
             DataDeNascimento = dataDeNascimento;
-            Endereco = endereco;
             TelefoneDeContato = telefoneDeContato;
         }
 
@@ -29,6 +29,23 @@ namespace TVAssinatura.Dominio.Clientes
 
             if (string.IsNullOrEmpty(nome))
                 throw new ArgumentException("O Nome informado é inválido.");
+        }
+
+        private void ValidarTelefoneDeContato(string telefoneDeContato)
+        {
+            if (string.IsNullOrWhiteSpace(telefoneDeContato))
+                throw new ArgumentException("O telefone informado é inválido");
+        }
+
+        public void AdicionarEndereco(Endereco endereco)
+        {
+            Endereco = endereco;
+        }
+
+        public void AlterarTelefoneDeContato(string novoTelefoneDeContato)
+        {
+            ValidarTelefoneDeContato(novoTelefoneDeContato);
+            TelefoneDeContato = novoTelefoneDeContato;
         }
     }
 }

@@ -57,5 +57,23 @@ namespace TVAssinatura.Dominio.TestesDeUnidade.Clientes.Enderecos
         {
             Assert.Throws<ArgumentException>(() => EnderecoBuilder.Novo().ComEstado(estado).Build());
         }
+
+        [Fact]
+        public void DeveAlterarEndereco()
+        {
+            var endereco = EnderecoBuilder.Novo().Build();
+            var enderecoEsperado = new
+            {
+                Logradouro = "Avenida Afonso Pena",
+                Numero = 1500,
+                Cep = "79990000",
+                Cidade = "Campo Grande",
+                Estado = "MS"
+            };
+
+            endereco.Alterar(enderecoEsperado.Logradouro, enderecoEsperado.Numero, enderecoEsperado.Cep, enderecoEsperado.Cidade, enderecoEsperado.Estado);
+
+            enderecoEsperado.ToExpectedObject().ShouldMatch(endereco);
+        }
     }
 }

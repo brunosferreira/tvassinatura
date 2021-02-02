@@ -38,5 +38,15 @@ namespace TVAssinatura.Dominio.Clientes.Enderecos
             if (string.IsNullOrEmpty(estado))
                 throw new ArgumentException("O Estado informado é inválido.");
         }
+
+        public void Alterar(string logradouro, int numero, string cep, string cidade, string estado)
+        {
+            Validar(logradouro, numero, cep, cidade, estado);
+            Logradouro = logradouro;
+            Numero = numero;
+            Cep = cep;
+            Cidade = cidade;
+            Estado = estado;
+        }
     }
 }

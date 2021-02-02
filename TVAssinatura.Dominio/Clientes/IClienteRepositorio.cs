@@ -1,8 +1,10 @@
 ﻿
+using TVAssinatura.Dominio._Base;
+
 namespace TVAssinatura.Dominio.Clientes
 {
-    public interface IClienteRepositorio
+    public interface IClienteRepositorio : IRepositorio<Cliente>
     {
-        Cliente ObterPeloCpf(string cpf);
+        Cliente ObterPorCpf(string cpf);
     }
 }

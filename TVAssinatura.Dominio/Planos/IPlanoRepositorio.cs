@@ -1,8 +1,10 @@
 ﻿
+using TVAssinatura.Dominio._Base;
+
 namespace TVAssinatura.Dominio.Planos
 {
-    public interface IPlanoRepositorio
+    public interface IPlanoRepositorio : IRepositorio<Plano>
     {
-        Plano ObterPlanoPorNome(string nome);
+        Plano ObterPorNome(string nome);
     }
 }

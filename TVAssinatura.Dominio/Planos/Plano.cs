@@ -31,10 +31,20 @@ namespace TVAssinatura.Dominio.Planos
 
         public void AdicionarCanal(Canal canal)
         {
-            if (canal == null)
-                throw new ArgumentException("O canal informado é inválido");
-
+            ValidarCanal(canal);
             Canais.Add(canal);
+        }
+
+        public void RemoverCanal(Canal canal)
+        {
+            ValidarCanal(canal);
+            Canais.Remove(canal);
+        }
+
+        private void ValidarCanal(Canal canal)
+        {
+            if (canal == null)
+                throw new ArgumentException("o canal informado é inválido");
         }
     }
 }

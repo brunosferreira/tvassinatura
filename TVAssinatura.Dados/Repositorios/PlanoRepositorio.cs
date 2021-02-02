@@ -10,7 +10,7 @@ namespace TVAssinatura.Dados.Repositorios
         {
         }
 
-        public Plano ObterPlanoPorNome(string nome)
+        public Plano ObterPorNome(string nome)
         {
             var plano = Context.Set<Plano>().Where(p => p.Nome == nome);
             return plano.Any() ? plano.First() : null;
