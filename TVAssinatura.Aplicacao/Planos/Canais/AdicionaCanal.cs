@@ -3,11 +3,11 @@ using TVAssinatura.Dominio.Planos.Canais;
 
 namespace TVAssinatura.Aplicacao.Planos.Canais
 {
-    public class AdicionarCanal
+    public class AdicionaCanal
     {
         private readonly ICanalRepositorio _canalRepositorio;
 
-        public AdicionarCanal(ICanalRepositorio canalRepositorio)
+        public AdicionaCanal(ICanalRepositorio canalRepositorio)
         {
             _canalRepositorio = canalRepositorio;
         }
@@ -17,10 +17,9 @@ namespace TVAssinatura.Aplicacao.Planos.Canais
             if (string.IsNullOrWhiteSpace(canal.Nome))
                 ValidarNomeCanal(canal.Nome);
 
-            var _canal = new Canal(canal.Numero, canal.Nome, canal.Categoria);
-            _canalRepositorio.Adicionar(_canal);
+            _canalRepositorio.Adicionar(canal);
 
-            return _canal.Id;
+            return canal.Id;
         }
 
         public void ValidarNomeCanal(string nome)

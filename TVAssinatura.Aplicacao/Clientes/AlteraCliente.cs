@@ -1,30 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TVAssinatura.Dominio.Clientes;
+﻿using TVAssinatura.Dominio.Clientes;
 using TVAssinatura.Dominio.Clientes.Enderecos;
 
 namespace TVAssinatura.Aplicacao.Clientes
 {
-    public class AdicionarCliente
+    public class AlteraCliente
     {
         private readonly IClienteRepositorio _clienteRepositorio;
 
-        public AdicionarCliente(IClienteRepositorio clienteRepositorio)
+        public AlteraCliente(IClienteRepositorio clienteRepositorio)
         {
             _clienteRepositorio = clienteRepositorio;
-        }
-
-        public int Adicionar(Cliente cliente)
-        {
-            _clienteRepositorio.Adicionar(cliente);
-            return cliente.Id;
-        }
-
-        public void AdicionarEndereco(int idDoCliente, Endereco endereco)
-        {
-            var cliente = _clienteRepositorio.ObterPorId(idDoCliente);
-            cliente.AdicionarEndereco(endereco);
         }
 
         public void AlterarEndereco(int idDoCliente, Endereco enderecoNovo)
@@ -39,6 +24,5 @@ namespace TVAssinatura.Aplicacao.Clientes
             var cliente = _clienteRepositorio.ObterPorId(idDoCliente);
             cliente.AlterarTelefoneDeContato(telefone);
         }
-
     }
 }

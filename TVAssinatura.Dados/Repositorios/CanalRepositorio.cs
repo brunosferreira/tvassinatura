@@ -5,7 +5,7 @@ using TVAssinatura.Dominio.Planos.Canais;
 
 namespace TVAssinatura.Dados.Repositorios
 {
-    class CanalRepositorio : RepositorioBase<Canal>, ICanalRepositorio
+    public class CanalRepositorio : RepositorioBase<Canal>, ICanalRepositorio
     {
         public CanalRepositorio(ApplicationDbContext context) : base(context)
         {

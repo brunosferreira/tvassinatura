@@ -3,11 +3,11 @@ using TVAssinatura.Dominio.Planos.Canais;
 
 namespace TVAssinatura.Aplicacao.Planos.Canais
 {
-    public class ConsultarCanal
+    public class ConsultaCanal
     {
         private readonly ICanalRepositorio _canalRepositorio;
 
-        public ConsultarCanal(ICanalRepositorio canalRepositorio)
+        public ConsultaCanal(ICanalRepositorio canalRepositorio)
         {
             _canalRepositorio = canalRepositorio;
         }

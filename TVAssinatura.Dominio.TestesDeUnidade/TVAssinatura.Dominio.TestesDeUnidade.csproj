@@ -22,11 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TVAssinatura.Aplicacao\TVAssinatura.Aplicacao.csproj" />
     <ProjectReference Include="..\TVAssinatura.Dominio\TVAssinatura.Dominio.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Aplicacao\" />
+    <ProjectReference Include="..\TvAssinatura.Ioc\TVAssinatura.Ioc\TVAssinatura.Ioc.csproj" />
   </ItemGroup>
 
 </Project>

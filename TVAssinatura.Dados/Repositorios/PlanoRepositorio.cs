@@ -4,7 +4,7 @@ using TVAssinatura.Dominio.Planos;
 
 namespace TVAssinatura.Dados.Repositorios
 {
-    class PlanoRepositorio : RepositorioBase<Plano>, IPlanoRepositorio
+    public class PlanoRepositorio : RepositorioBase<Plano>, IPlanoRepositorio
     {
         public PlanoRepositorio(ApplicationDbContext context) : base(context)
         {
