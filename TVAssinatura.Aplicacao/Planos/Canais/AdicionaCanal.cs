@@ -14,19 +14,18 @@ namespace TVAssinatura.Aplicacao.Planos.Canais
 
         public int Adicionar(Canal canal)
         {
-            if (string.IsNullOrWhiteSpace(canal.Nome))
-                ValidarNomeCanal(canal.Nome);
+            ValidarNomeCanal(canal.Nome);
 
             _canalRepositorio.Adicionar(canal);
 
             return canal.Id;
         }
 
-        public void ValidarNomeCanal(string nome)
+        private void ValidarNomeCanal(string nome)
         {
             var canal = _canalRepositorio.ObterPorNome(nome);
             if (canal != null)
-                throw new Exception("Jà existe um canal com este nome.");
+                throw new ArgumentException("Jà existe um canal com este nome.");
         }
 
     }

@@ -4,19 +4,13 @@ using TVAssinatura.Dominio.Planos.Canais;
 
 namespace TVAssinatura.Aplicacao.Planos
 {
-    public class AdicionarPlano
+    public class AlteraPlano
     {
         private readonly IPlanoRepositorio _planoRepositorio;
 
-        public AdicionarPlano(IPlanoRepositorio planoRepositorio)
+        public AlteraPlano(IPlanoRepositorio planoRepositorio)
         {
             _planoRepositorio = planoRepositorio;
-        }
-
-        public int Adicionar(Plano plano)
-        {
-            _planoRepositorio.Adicionar(plano);
-            return plano.Id;
         }
     }
 }

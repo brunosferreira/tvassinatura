@@ -25,7 +25,7 @@ namespace TVAssinatura.Dados.Repositorios
             return query.Any() ? query.First() : null;
         }
 
-        public List<TEntidade> Consultar()
+        public List<TEntidade> ObterTodos()
         {
             var entidades = Context.Set<TEntidade>().ToList();
             return entidades.Any() ? entidades : new List<TEntidade>();

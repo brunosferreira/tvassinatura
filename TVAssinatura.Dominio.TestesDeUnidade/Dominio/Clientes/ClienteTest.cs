@@ -74,5 +74,15 @@ namespace TVAssinatura.Dominio.TestesDeUnidade.Clientes
 
             enderecoEsperado.ToExpectedObject().ShouldEqual(cliente.Endereco);
         }
+
+        [Fact]
+        public void NaoDeveAdicionarEnderecoParaClienteComEnderecoJaCadastrado()
+        {
+            var cliente = ClienteBuilder.Novo().Build();
+            cliente.AdicionarEndereco(EnderecoBuilder.Novo().Build());
+            var novoEndereco = EnderecoBuilder.Novo().Build();
+
+            Assert.Throws<ArgumentException>(() => cliente.AdicionarEndereco(novoEndereco));
+        }
     }
 }

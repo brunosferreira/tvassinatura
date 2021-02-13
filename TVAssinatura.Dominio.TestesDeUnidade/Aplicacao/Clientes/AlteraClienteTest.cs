@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using Moq;
 using System;
 using TVAssinatura.Aplicacao.Clientes;
 using TVAssinatura.Dominio.Clientes;
@@ -7,32 +8,23 @@ using Xunit;
 
 namespace TVAssinatura.Dominio.TestesDeUnidade.Aplicacao.Clientes
 {
-    public class AlteraClienteTest : IDisposable
+    public class AlteraClienteTest
     {
-        private IClienteRepositorio _clienteRepositorio;
-        private AlteraCliente _alteraCliente;
-        private Faker faker;
 
-        public AlteraClienteTest(IClienteRepositorio clienteRepositorio)
-        {
-            _clienteRepositorio = clienteRepositorio;
-            _alteraCliente = new AlteraCliente(_clienteRepositorio);
-            faker = new Faker();
-        }
-
-        public void Dispose()
-        {
-        }
-
-        [Fact]
         public void DeveAlterarTelefoneDoCliente()
         {
-            string telefoneDeContatoEsperado = faker.Phone.PhoneNumber();
-            Cliente cliente = ClienteBuilder.Novo().Build();
+            var fake = new Faker();
+            string telefoneEsperado = fake.Phone.PhoneNumber();
+            var cliente = ClienteBuilder.Novo().Build();
+            var clienteRepositorioMock = new Mock<IClienteRepositorio>();
+            var adicionaCliente = new AdicionaCliente(clienteRepositorioMock.Object);
+            var alteraCliente = new AlteraCliente(clienteRepositorioMock.Object);
 
-            _alteraCliente.AlterarTelefoneDeContato(cliente.Id, telefoneDeContatoEsperado);
+            alteraCliente.AlterarTelefoneDeContato(cliente.Id, telefoneEsperado);
 
-            Assert.Equal(telefoneDeContatoEsperado, cliente.TelefoneDeContato);
+            clienteRepositorioMock.Verify(c => c.Adicionar(It.Is<Cliente>(
+                    c => c.TelefoneDeContato == telefoneEsperado
+            )));
         }
     }
 }

@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TVAssinatura.Dados\TVAssinatura.Dados.csproj" />
-    <ProjectReference Include="..\TVAssinatura.Dominio\TVAssinatura.Dominio.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,7 +14,7 @@ namespace TVAssinatura.Aplicacao.Planos.Canais
 
         public List<Canal> ObterTodosOsCanais()
         {
-            return _canalRepositorio.Consultar();
+            return _canalRepositorio.ObterTodos();
         }
 
         public Canal ObterPorNome(string nome)

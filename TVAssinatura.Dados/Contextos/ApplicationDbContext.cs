@@ -14,6 +14,12 @@ namespace TVAssinatura.Dados.Contextos
         {
         }
 
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Canal> Canais { get; set; }
+        public DbSet<Plano> Planos { get; set; }
+        public DbSet<Contrato> Contratos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -23,11 +29,5 @@ namespace TVAssinatura.Dados.Contextos
         {
             await SaveChangesAsync();
         }
-
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Endereco> Enderecos { get; set; }
-        public DbSet<Canal> Canais { get; set; }
-        public DbSet<Plano> Planos { get; set; }
-        public DbSet<Contrato> Contratos { get; set; }
     }
 }

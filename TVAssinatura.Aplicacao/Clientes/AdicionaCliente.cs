@@ -15,6 +15,7 @@ namespace TVAssinatura.Aplicacao.Clientes
 
         public int Adicionar(Cliente cliente)
         {
+            VerificaClientePorCpf(cliente.Cpf);
             _clienteRepositorio.Adicionar(cliente);
             return cliente.Id;
         }
@@ -29,7 +30,7 @@ namespace TVAssinatura.Aplicacao.Clientes
         {
             var cliente = _clienteRepositorio.ObterPorCpf(cpf);
             if (cliente != null)
-                throw new Exception("Já existe um cliente cadastrado com este CPF.");
+                throw new ArgumentException("Já existe um cliente cadastrado com este CPF.");
         }
     }
 }

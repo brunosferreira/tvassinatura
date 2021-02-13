@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TVAssinatura.Aplicacao", "T
 		{D11AAB0E-2375-4CEA-8493-4FCA720B9846} = {D11AAB0E-2375-4CEA-8493-4FCA720B9846}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVAssinatura.Ioc", "TvAssinatura.Ioc\TVAssinatura.Ioc\TVAssinatura.Ioc.csproj", "{D731B8C4-1762-4EB8-A79D-85BE02FCFA9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TVAssinatura.Ioc", "TvAssinatura.Ioc\TVAssinatura.Ioc\TVAssinatura.Ioc.csproj", "{D731B8C4-1762-4EB8-A79D-85BE02FCFA9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVAssinatura.WebApi", "TVAssinatura.WebApi\TVAssinatura.WebApi\TVAssinatura.WebApi.csproj", "{45FA7A3A-FA5E-4153-B103-6F43324571E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D731B8C4-1762-4EB8-A79D-85BE02FCFA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D731B8C4-1762-4EB8-A79D-85BE02FCFA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D731B8C4-1762-4EB8-A79D-85BE02FCFA9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45FA7A3A-FA5E-4153-B103-6F43324571E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45FA7A3A-FA5E-4153-B103-6F43324571E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45FA7A3A-FA5E-4153-B103-6F43324571E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45FA7A3A-FA5E-4153-B103-6F43324571E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

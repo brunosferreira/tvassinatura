@@ -13,6 +13,10 @@ namespace TVAssinatura.Dominio.Contratos
         public DateTime DataDaAssinatura { get; private set; }
         public bool EhVip => Plano.Mensalidade >= 150.0M && DateTime.Today >= DataDaAssinatura.AddYears(1);
 
+        public Contrato()
+        {
+        }
+
         public Contrato(Cliente cliente, Plano plano, DateTime dataDaAssinatura)
         {
             Validar(cliente, plano, dataDaAssinatura);

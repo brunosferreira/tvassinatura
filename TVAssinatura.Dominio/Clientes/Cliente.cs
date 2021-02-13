@@ -39,6 +39,9 @@ namespace TVAssinatura.Dominio.Clientes
 
         public void AdicionarEndereco(Endereco endereco)
         {
+            if (Endereco != null)
+                throw new ArgumentException("Cliente com endereço já cadastrado.");
+
             Endereco = endereco;
         }
 

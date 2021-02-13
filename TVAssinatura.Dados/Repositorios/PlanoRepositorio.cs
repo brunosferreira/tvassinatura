@@ -10,6 +10,12 @@ namespace TVAssinatura.Dados.Repositorios
         {
         }
 
+        public bool ExisteCanalNoPlano(int idDoPlano, int idDoCanal)
+        {
+            return Context.Set<Plano>().Where(p => p.Id == idDoPlano &&
+                p.Canais.Contains(p.Canais.Where(c => c.Id == idDoCanal).First())).Any();
+        }
+
         public Plano ObterPorNome(string nome)
         {
             var plano = Context.Set<Plano>().Where(p => p.Nome == nome);
